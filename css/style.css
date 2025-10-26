@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* CSS Variables untuk tema */
+:root {
+    --primary-color: #0056b3; /* Biru UT */
+    --secondary-color: #f4f4f4;
+    --border-color: #ddd;
+    --shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Reset dan Body Styling login*/
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    /* Gradasi Biru Gelap mirip gambar landing page */
+    background: linear-gradient(135deg, #0f204d 0%, #173f7f 50%, #1e5aae 100%);
+    color: #f0f0f0; /* Ubah warna teks default menjadi putih muda */
+    line-height: 1.6;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Styling Kartu (Card) */
+.card {
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparan putih agar menyatu dengan background gelap */
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow lebih kuat agar menonjol */
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px); /* Efek blur pada background di belakang card (opsional, untuk tampilan modern) */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border tipis agar lebih jelas */
+}
+
+/* Utility: Tombol */
+.btn {
+    display: inline-block;
+    background-color: #007bff; /* Biru yang lebih terang untuk tombol */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #0056b3; /* Biru lebih gelap saat hover */
+}
+
+/* === Halaman Login (index.html) === */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+.login-container .card {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.form-grup {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.form-grup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff; /* Teks label putih */
+}
+.form-grup input {
+    background-color: rgba(255, 255, 255, 0.1); /* Input semi-transparan */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Border putih tipis */
+    color: #fff; /* Teks input putih */
+    width: 100%; /* Pastikan lebar input tetap benar */
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.form-grup input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder lebih terang */
+}
+.link-bawah {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.link-bawah a {
+    color: #90caf9; /* Biru terang untuk link agar kontras */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* === Modal Box Styling === */
+.modal {
+    display: none; /* Sembunyi secara default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Latar belakang gelap */
+
+    /* Flexbox untuk menengahkan modal */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal.show {
+    display: flex; /* Tampilkan modal saat class 'show' ditambahkan oleh JS */
+}
+.modal-content {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+    background-color: #173f7f; /* Sesuaikan warna modal agar kontras */
+    color: #f0f0f0; /* Teks putih di modal */
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* === Halaman Dashboard & Navigasi === */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.1); /* Navbar semi-transparan */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.nav-brand {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff; /* Teks navigasi putih */
+}
+.nav-menu .nav-link {
+    color: #fff; /* Teks navigasi putih */
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.nav-menu .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+.nav-menu .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+.greeting-card h1 {
+    color: #fff; /* Teks putih di card greeting */
+}
+
+/* === Halaman Tracking (tracking.html) === */
+.tracking-form {
+    display: flex;
+    gap: 10px;
+}
+.tracking-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+.tracking-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* === Halaman Stok (stok.html) === */
+.stok-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+.stok-card {
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparan */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.stok-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.05); /* Sedikit latar belakang gambar */
+}
+.stok-card-content {
+    padding: 15px;
+}
+.stok-card-content h4,
+.stok-card-content p,
+.stok-card-content .stok {
+    color: #fff; /* Teks di card stok putih */
+}
+.stok-card-content h4 {
+    margin: 0 0 10px 0;
+    color: #90caf9; /* Judul biru terang */
+}
+.stok-card-content p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.stok-card-content .stok {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Form Tambah Stok */
+.form-tambah {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.form-tambah .form-grup {
+    margin-bottom: 0;
+}
+.form-tambah .btn {
+    grid-column: 1 / -1;
+}
+
+/* ================================== */
+/* === PERBAIKAN TAMPILAN TRACKING === */
+/* ================================== */
+.card-tracking {
+    padding: 0;
+    overflow: hidden;
+}
+.tracking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background-color: rgba(255, 255, 255, 0.05); /* Header sedikit transparan */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.tracking-header h3 {
+    margin: 0;
+    color: #fff; /* Teks putih */
+}
+.status-badge {
+    background-color: #007bff; /* Biru terang */
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.tracking-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    padding: 25px;
+}
+.tracking-details h4,
+.tracking-history h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #fff; /* Teks putih */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+.tracking-details p {
+    margin: 5px 0 10px 0;
+    color: #f0f0f0; /* Teks putih muda */
+}
+.timeline {
+    margin-top: 0;
+    border-left: 3px solid #007bff; /* Garis timeline biru terang */
+    padding-left: 20px;
+}
+.timeline li {
+    position: relative;
+    padding: 5px 0 20px 25px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #f0f0f0; /* Teks putih muda */
+}
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #007bff; /* Titik biru terang */
+    border: 3px solid #173f7f; /* Border sesuai background gelap */
+    box-shadow: 0 0 0 3px #007bff;
+}
+.timeline li span {
+    display: block;
+    font-size: 13px;
+    color: #aaa; /* Timestamp abu-abu terang */
+    margin-top: 4px;
+}
+
+/* ================================== */
+/* === PERBAIKAN LAYOUT LOGIN === */
+/* ================================== */
+
+/* Target Judul 'Selamat Datang' */
+.login-container .card h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff; /* Teks putih */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* FIX 'MLEYOT' LOGO UT & TAMBAH BACKGROUND */
+.login-logo-inline {
+    height: 80px;
+    width: auto;  /* Biarkan lebar otomatis */
+    margin-top: 0;
+    margin-bottom: 10px;
+    /* --- Tambahan untuk membuat logo terlihat --- */
+    
+}
+
+/* Target Sub-judul 'Aplikasi SITTA...' */
+.login-container .card p {
+    font-size: 16px;
+    color: #f0f0f0; /* Teks putih muda */
+    margin-bottom: 30px;
+}
+
+/* ================================== */
+/* === PERBAIKAN TOMBOL LOGIN === */
+/* ================================== */
+
+/* Target tombol 'Masuk' di halaman login */
+.login-container .card .btn {
+    width: 100%; /* Buat lebarnya penuh */
+    box-sizing: border-box; /* Pastikan padding tidak merusak lebar */
+    padding: 12px; /* Sesuaikan padding agar terlihat bagus */
+    margin-top: 10px; /* Beri sedikit jarak dari input password */
+}
+
+
+/* ================================== */
+/* === BAGIAN RESPONSIVE (HP) === */
+/* ================================== */
+@media (max-width: 768px) {
+
+    /* 1. Perbaikan Navigasi (Menu) */
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .nav-menu .nav-link {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis pemisah transparan */
+    }
+
+    /* 2. Perbaikan Form Tambah Stok (stok.html) */
+    .form-tambah {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* 3. Perbaikan Form Tracking (tracking.html) */
+    .tracking-form {
+        flex-direction: column;
+    }
+    .tracking-body {
+        grid-template-columns: 1fr;
+    }
+    .tracking-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* 4. Perbaikan Form Login (index.html) */
+    .login-container .card {
+        padding: 20px;
+    }
+
+    /* 5. Perbaikan Grid Stok (stok.html) */
+    .stok-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+/* Style untuk logo di Navbar */
+.nav-brand {
+    display: flex; /* Gunakan flexbox agar logo dan teks sejajar */
+    align-items: center; /* Tengahkan vertikal */
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.nav-logo {
+    height: 35px; /* Sesuaikan tinggi logo */
+    margin-right: 10px; /* Beri jarak antara logo dan teks SITTA */
+    filter: brightness(0) invert(1); /* Untuk logo gelap agar jadi putih */
+    /* Hapus filter ini jika logo Anda sudah berwarna putih atau cerah */
+}
+
+/* Perbaikan untuk responsive (jika navbar berubah jadi kolom) */
+@media (max-width: 768px) {
+    .nav-brand {
+        justify-content: center; /* Tengahkan logo+teks di HP */
+        width: 100%; /* Agar bisa di-center */
+        margin-bottom: 10px; /* Jarak ke menu di bawahnya */
+    }
+}

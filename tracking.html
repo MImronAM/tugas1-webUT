@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITTA - Tracking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <span class="nav-brand">SITTA</span>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="stok.html" class="nav-link">Informasi Bahan Ajar</a>
+                <a href="tracking.html" class="nav-link active">Tracking Pengiriman</a>
+                <a href="#" class="nav-link">Laporan</a>
+                <a href="#" class="nav-link">Histori</a>
+                <a href="#" id="btnLogout" class="nav-link btn-logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h2>Tracking Pengiriman</h2>
+            <p>Masukkan Nomor Delivery Order (DO) untuk melacak.</p>
+            
+            <form id="trackingForm" class="tracking-form">
+                <input type="text" id="nomorDO" placeholder="Contoh: 2023005678" required>
+                <button type="submit" class="btn">Cari</button>
+            </form>
+        </div>
+
+        <div id="hasil-tracking" class="card-tracking" style="display: none;">
+            </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

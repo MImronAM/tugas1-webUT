@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITTA - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container login-container">
+        <form id="loginForm" class="card">
+            
+            <h1>Selamat Datang</h1>
+
+            <img src="img/LOGO-WHITE.png" alt="Logo Universitas Terbuka" class="login-logo-inline">
+            
+            <p>Aplikasi SITTA (Pemesanan Bahan Ajar)</p>
+
+            
+            <div class="form-grup">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="E-mail" required>
+            </div>
+            
+            <div class="form-grup">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            
+            <button type="submit" class="btn">Masuk</button>
+            
+            <div class="link-bawah">
+                <a href="#" id="btnLupaPassword">Lupa password?</a>
+                <a href="#" id="btnDaftar">Belum punya akun? Daftar</a>
+            </div>
+        </form>
+    </div>
+
+    <div id="modalLupaPassword" class="modal">
+        <div class="modal-content card">
+            <span class="close-btn" id="closeLupa">&times;</span>
+            <h2>Lupa Password</h2>
+            <p>Silakan hubungi administrator pusat untuk reset password Anda.</p>
+        </div>
+    </div>
+
+    <div id="modalDaftar" class="modal">
+        <div class="modal-content card">
+            <span class="close-btn" id="closeDafta">&times;</span>
+            <h2>Daftar Akun</h2>
+            <p>Pendaftaran akun baru hanya dapat dilakukan oleh Admin UT-Daerah Anda.</p>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
