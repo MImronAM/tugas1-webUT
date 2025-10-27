@@ -87,7 +87,7 @@ var dataBahanAjar = [
     jenisBarang: "BMP",
     edisi: "4",
     stok: 204,
-    cover: "img/paud_perkembangan.jpeg" // <-- BENAR
+    cover: "img/paud_perkembangan.jpeg" 
   }
 ];
 
