@@ -2,10 +2,10 @@
 
 /* Variables untuk tema */
 :root {
-    --primary-color: #0056b3; 
-    --secondary-color: #f4f4f4;
-    --border-color: #ddd;
-    --shadow: 0 4px 10px rgba(0,0,0,0.1);
+    primary-color: #0056b3; 
+    secondary-color: #f4f4f4;
+    border-color: #ddd;
+    shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /*  Body Styling login*/
